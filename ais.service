@@ -1,0 +1,12 @@
+[Unit]
+Description=aisstream.io polling for vessel locations
+After=syslog.target
+
+[Service]
+ExecStart=/home/callum/Documents/projects/ais/venv/bin/python /home/callum/Documents/projects/ais/fetch_ais_data.py
+RuntimeDirectory=/home/callum/Documents/projects/ais
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=default.target
